@@ -2,6 +2,8 @@ from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_cors import CORS
+
+from googletrans import Translator
 import MeCab
 
 app = Flask(__name__)
@@ -56,7 +58,7 @@ def get_events():
 def get_event(id):
     event = Event.query.filter_by(id=id).one()
     formatted_event = format_event(event)
-    print(formatted_event["description"])
+    # print(formatted_event["description"])
     mecabTagger = MeCab.Tagger()
     count = {}
     # print(mecabTagger.parse(formatted_event["description"]))
@@ -89,8 +91,27 @@ def get_event(id):
             pass
         node = node.next
     count = sorted(count.items(), key=lambda x:x[1], reverse=True)
-    print(count)
-    return {'event': count}
+    print(type(count[0]))
+    print(count[0][0])
+
+    translator = Translator()
+
+    translation = translator.translate(count[0], dest='en')
+    listed = list(count[0])
+    listed.append(translation.text)
+    print(listed)
+
+    listedArr = []
+
+    for each in count:
+        listedArr.append(list(each))
+    print(listedArr)
+
+    for each in listedArr:
+        each.append(translator.translate(each[0], dest='en').text)
+    print(listedArr)
+
+    return {'event': listedArr}
 
 # delete an event
 @app.route('/events/<id>', methods = ['DELETE'])
@@ -101,13 +122,13 @@ def delete_event(id):
     return f'Event (id: {id}) deleted!'
 
 # edit an event
-@app.route('/events/<id>', methods = ['PUT'])
-def update_event(id):
-    event = Event.query.filter_by(id=id)
-    description = request.json['description']
-    event.update(dict(description = description, create_at = datetime.utcnow()))
-    db.session.commit()
-    return {'event': format_event(event.one())}
+# @app.route('/events/<id>', methods = ['PUT'])
+# def update_event(id):
+#     event = Event.query.filter_by(id=id)
+#     description = request.json['description']
+#     event.update(dict(description = description, create_at = datetime.utcnow()))
+#     db.session.commit()
+#     return {'event': format_event(event.one())}
 
 if __name__ == '__main__':
     app.run()

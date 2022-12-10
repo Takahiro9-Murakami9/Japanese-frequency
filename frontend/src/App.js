@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react"
 import axios from "axios"
 // import {format} from "date-fns"
-import TextField from '@mui/material/TextField';
+import  TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import './App.css';
 
 const baseUrl = "http://localhost:5000"
@@ -26,7 +27,7 @@ function App() {
   const handleGetParse = async (id) => {
     try {
       const parsedData = await axios.get(`${baseUrl}/events/${id}`);
-      console.log("ParsedData: ", parsedData.data.event);
+      // console.log("ParsedData: ", parsedData.data.event);
       const getParsedData = parsedData.data.event;
       console.log(getParsedData);
       setGetParse(getParsedData);
@@ -34,6 +35,10 @@ function App() {
       console.error(err.message);
     }
   }
+
+  // const handleGetTranslate = () => {
+  //   console.log(setGetParse(getParse));
+  // }
   
   const handleDelete = async (id) => {
     try {
@@ -71,7 +76,8 @@ function App() {
       <section>
         <form onSubmit={handleSubmit}>
           <div style={{ paddingBottom: "30px" }}>
-          <label htmlFor="description" >Frequency measurement</label>
+          <label htmlFor="description" style={ { fontSize: "80px" } }>Check frequency and translation</label>
+          <p>This app allows you to look up word frequencies and English translations in the Japanese text you want to look up.</p>
           </div>
           <TextField
           className = "textfield"
@@ -84,7 +90,7 @@ function App() {
           value={description}
           onChange={handleChange}
           />
-          <button type="submit" style={{ alignItems: "center" }}>Submit</button>
+          <Button type="submit" color="inherit">Submit</Button>
         </form>
       </section>
       <section>
