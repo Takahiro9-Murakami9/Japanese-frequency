@@ -97,7 +97,7 @@ function App() {
         <ul>
           {eventsList.map(event => {
             return (
-              <li style={{display: "flex"}}key={event.id}>
+              <li style={{display: "flex", textAlign: "left"}}key={event.id}>
                 {event.description}
                 <button onClick={() => handleDelete(event.id)}>Delete</button>
                 <button onClick={() => handleGetParse(event.id)}>Frequency</button>
@@ -109,7 +109,8 @@ function App() {
       </section>
       <section>{getParse.map(each => {
         return (
-          <li>{each}</li>
+          <li style={{wordSpacing: "25px"}}>{each[0]}: frequency⇒{each[1]}   translation⇒{each[2]}</li>
+
         )
       })}
       </section>
