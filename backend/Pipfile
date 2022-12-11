@@ -9,6 +9,8 @@ flask-sqlalchemy = "*"
 psycopg2 = "*"
 python-dotenv = "*"
 flask-cors = "*"
+googletrans = "==3.1.0a0"
+mecab-python3 = "*"
 
 [dev-packages]
 
