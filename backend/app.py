@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_cors import CORS
+from flask_migrate import Migrate
 
 from googletrans import Translator
 import MeCab
@@ -9,6 +10,7 @@ import MeCab
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:tak8799you@localhost/japanese_freq'
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 CORS(app)
 
 
@@ -17,6 +19,8 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(100), nullable=False)
     create_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    description = db.Column(db.Text(10000), nullable=False)
 
     def __repr__(self):
         return f"Event: {self.description}"
