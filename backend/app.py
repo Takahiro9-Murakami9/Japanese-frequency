@@ -35,6 +35,20 @@ def format_event(event):
         "create_at": event.create_at
     }
 
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return f'<Category {self.id}: {self.name}>'
+
+class Language(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return f'<Language {self.id}: {self.name}>'
+
 @app.route('/')
 def hello():
     return 'Hey!'
