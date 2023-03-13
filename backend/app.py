@@ -49,6 +49,15 @@ class Language(db.Model):
     def __repr__(self):
         return f'<Language {self.id}: {self.name}>'
 
+class Vocabulary(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    contents = db.Column(db.String(25), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+    language_id = db.Column(db.Integer, db.ForeignKey('language.id'), nullable=False)
+
+    def __repr__(self):
+        return '<Vocabulary %r>' % self.contents
+
 @app.route('/')
 def hello():
     return 'Hey!'
