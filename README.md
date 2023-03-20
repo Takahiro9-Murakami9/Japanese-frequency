@@ -1,10 +1,8 @@
-# This app can analyze and provide English translations!
+# This app can analyze text and provide words frequencies and English translations!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## introduction
 
-## Available Scripts
-
-In the project directory, you can run:
+When learning a language, don't you think it's important to know how often certain vocabulary is used in a particular genre of text? For example, studying vocabulary with high frequency of occrence in the field of economics would be more efficient. This app provides users with the frequency of vocabulary and its English translations in Japanese text entered by user.
 
 ### `npm start`
 
