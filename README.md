@@ -8,7 +8,10 @@ When learning a language, don't you think it's important to know how often certa
 
 Before setup, please install Visual Studio Code, PostgreSQL, and Python. Installing the Python extension in Visual Studio Code allows you to use Python within the IDE, which is very convenient.
 
+<!-- Start of Annotation -->
+Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, and macOS. It is a popular tool for developers due to its lightweight design and wide range of features, such as debugging, code navigation, and extension support.
 
+<!-- End of Annotation -->
 
 ### `npm test`
 
