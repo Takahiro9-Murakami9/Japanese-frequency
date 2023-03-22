@@ -2,9 +2,15 @@
 
 ## introduction
 
-When learning a language, don't you think it's important to know how often certain vocabulary is used in a particular genre of text? For example, studying vocabulary with high frequency of occrence in the field of economics would be more efficient. This app provides users with the frequency of vocabulary and its English translations in Japanese text entered by user.
+When learning a language, don't you think it's important to know how often certain vocabulary is used in a particular genre of text? For example, studying vocabulary with high frequency of occrence in the field of economics would be more efficient. 
 
 ### Feature
+
+So, this app provides users with the frequency of vocabulary and its English translations in Japanese text entered by user.
+
+- Vocabulary Frequency Analysis: Easily obtain the frequency of vocabulary in a text using the `get_vovabulary_frequency function.
+- English Translation Retrieval: In addition to obtaining the frequency of vocabulary, users can also retrieve the English translations of the vocabulary.
+
 
 ### Getting started
 
