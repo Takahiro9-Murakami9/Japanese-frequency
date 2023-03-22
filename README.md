@@ -12,6 +12,10 @@ So, this app provides users with the frequency of vocabulary and its English tra
 - English Translation Retrieval: In addition to obtaining the frequency of vocabulary, users can also retrieve the English translations of the vocabulary.
 
 
+https://user-images.githubusercontent.com/92550379/227063434-79c77ddf-aa32-4e2d-a3c1-a10f2ae758a5.mp4
+
+
+
 ### Getting started
 
 Before setup, please install Visual Studio Code[^1], PostgreSQL[^2], and Python[^3]. Installing the Python extension in Visual Studio Code allows you to use Python within the IDE, which is very convenient.
