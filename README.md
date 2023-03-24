@@ -26,7 +26,24 @@ Before setup, please install Visual Studio Code[^1], PostgreSQL[^2], and Python[
 
 [^3]:Python was first released in 1991 by Guido van Rossum and has since become one of the most popular programming languages in use today. It's used for a wide range of applications, including web development, data analysis, artificial intelligence, scientific computing, and more.
 
-## Set up
+## Installation backend
 
+### 1. Clone the repository
 
+```
+https://github.com/Takahiro9-Murakami9/Japanese-frequency.git
+```
+
+### 2. Navigate to the project's backend and create a new virtual environment:
+
+```
+cd .\backend\
+pipenv shell
+```
+
+### 3. Install the necessary dependencies:
+
+```
+pipenv shell
+```
 
