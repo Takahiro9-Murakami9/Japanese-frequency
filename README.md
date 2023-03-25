@@ -26,7 +26,7 @@ Before setup, please install Visual Studio Code[^1], PostgreSQL[^2], and Python[
 
 [^3]:Python was first released in 1991 by Guido van Rossum and has since become one of the most popular programming languages in use today. It's used for a wide range of applications, including web development, data analysis, artificial intelligence, scientific computing, and more.
 
-## Installation backend
+## Installation of backend
 
 ### 1. Clone the repository
 
@@ -46,4 +46,51 @@ pipenv shell
 ```
 pipenv shell
 ```
+
+## Configuration
+
+### 1. Create a new database:
+
+```
+sudo -u postgres createdb your_database_name
+```
+
+### 2. Make a .flaskenv file:
+
+```
+FLASK_APP=app
+FLASK_ENV=development
+FLASK_DEBUG=1
+DATABASE_URL=postgresql://postgres:your_postgresql's_password@localhost/your_database_name
+```
+
+##　Database Migrations
+
+This application uses Flask-Migrate to manage database migrations.
+
+Before running the application for the first time, you will need to create the database tables by running the following command:
+
+```
+flask db init
+flask db migrate
+flask db upgrade
+```
+
+The `flask db init`command initialize the migrations directory. You only need to run this command once.
+
+The`flask db migrate` command generates a new migration script based on the changes you've made to the models in your application.
+
+The `flask db upgrade` command applies the changes in the migration script to the database.
+
+After the initial setup, you only need to run the following commands to apply any new changes to the database:
+
+```
+flask db migrate
+flask db upgrade
+```
+
+
+
+
+
 
