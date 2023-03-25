@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -8,7 +9,7 @@ from googletrans import Translator
 import MeCab
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:tak8799you@localhost/japanese_freq'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 CORS(app)
