@@ -89,8 +89,20 @@ flask db migrate
 flask db upgrade
 ```
 
+## Installation of frontend
 
+### 1. Navigate to the project's frontend:
 
+```
+cd .\frontend\
+
+```
+
+### 2. Install the necessary dependencies:
+
+```
+npm install
+```
 
 
 
