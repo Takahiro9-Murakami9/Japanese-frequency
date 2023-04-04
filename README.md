@@ -44,7 +44,7 @@ pipenv shell
 ### 3. Install the necessary dependencies:
 
 ```
-pipenv shell
+pipenv install
 ```
 
 ## Configuration
@@ -104,5 +104,43 @@ cd .\frontend\
 npm install
 ```
 
+## Starting up the ASpplication
 
+To run this application, you will need to start both the frontend and backend sever.
+Follow the instrucitons below to get started.
 
+### Starting up the Flask Backend Server
+
+1. Open a new terminal window.
+2. Navigate to the `backend` directory of the project.
+3. Activate the virtual environment by running the following command:
+
+```
+pipenv shell
+```
+4. Run the following command to start the backend server:
+
+```
+flask run
+```
+5. The backend server should now be running on `http://localhost:5000`.
+
+### Starting up the Frontend Server
+
+1. Open a new terminal window.
+2. Navigate to the `frontend` directory of the project.
+3. Run the following command to start the frontend server:
+
+```
+npm start
+```
+This will start the frontend server on port 3000 by default. If you want use a different port number, you can specify it as an environment variable before running the `start` command. For example, to start the frontend server on port 8080, you can run the following command:
+
+```
+PORT=8080 npm start
+```
+4. The frontend server should now be running on `http://localhost:3000` (or the port number you specified).
+
+Note: If the frontend server fails to start due to a port conflict, you may need to change the port number in the start script defined in your package.json file.
+
+Congratulations! You have now started up both the frontend and backend servers for this web application. You should now be able to access the web application by visiting http://localhost:3000 (or the port number you specified) in your web browser.
