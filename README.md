@@ -104,7 +104,7 @@ cd .\frontend\
 npm install
 ```
 
-## Starting up the ASpplication
+## Starting up the Application
 
 To run this application, you will need to start both the frontend and backend sever.
 Follow the instrucitons below to get started.
