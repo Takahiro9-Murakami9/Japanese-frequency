@@ -16,7 +16,7 @@ https://user-images.githubusercontent.com/92550379/227063434-79c77ddf-aa32-4e2d-
 
 
 
-### Getting started
+## Getting started
 
 Before setup, please install Visual Studio Code[^1], PostgreSQL[^2], and Python[^3]. Installing the Python extension in Visual Studio Code allows you to use Python within the IDE, which is very convenient.
 
@@ -64,7 +64,7 @@ FLASK_DEBUG=1
 DATABASE_URL=postgresql://postgres:your_postgresql's_password@localhost/your_database_name
 ```
 
-##　Database Migrations
+## Database Migrations
 
 This application uses Flask-Migrate to manage database migrations.
 
